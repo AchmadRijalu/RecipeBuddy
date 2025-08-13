@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct ListRecipeView: View {
     @ObservedObject var listRecipeViewModel: ListRecipeViewModel
     @ObservedObject var favoriteRecipeViewModel: FavoriteRecipeViewModel
+    @State var isShowToast: Bool = false
     
     var body: some View {
         GeometryReader { geo in
@@ -119,7 +121,7 @@ struct ListRecipeView: View {
                         ScrollView {
                             LazyVStack(spacing: 0) {
                                 RecipeList(
-                                    recipes: $listRecipeViewModel.filteredRecipes,
+                                    recipes: $listRecipeViewModel.filteredRecipes, isShowToast: $isShowToast,
                                     favoriteRecipeViewModel: favoriteRecipeViewModel
                                 )
                             }
@@ -142,6 +144,7 @@ struct ListRecipeView: View {
 
 struct RecipeList: View {
     @Binding var recipes: [RecipeModel]
+    @Binding var isShowToast: Bool
     @ObservedObject var favoriteRecipeViewModel: FavoriteRecipeViewModel
     
     var body: some View {
@@ -152,7 +155,7 @@ struct RecipeList: View {
             ) {
                 ListRecipeItem(
                     recipe: recipe,
-                    favoriteRecipeViewModel: favoriteRecipeViewModel
+                    favoriteRecipeViewModel: favoriteRecipeViewModel, iShowToast: $isShowToast
                 )
             }
             .buttonStyle(PlainButtonStyle())

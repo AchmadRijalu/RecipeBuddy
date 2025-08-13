@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct FavoriteRecipeView: View {
     @ObservedObject var favoriteRecipeViewModel: FavoriteRecipeViewModel
+    @State var isShowToast: Bool = false
     
     var body: some View {
         NavigationView {
@@ -70,7 +72,7 @@ struct FavoriteRecipeView: View {
                                 )) {
                                     ListRecipeItem(
                                         recipe: recipe,
-                                        favoriteRecipeViewModel: favoriteRecipeViewModel
+                                        favoriteRecipeViewModel: favoriteRecipeViewModel, iShowToast: $isShowToast
                                     )
                                 }
                                 .buttonStyle(PlainButtonStyle())
@@ -80,7 +82,15 @@ struct FavoriteRecipeView: View {
                     }
                 }
             }
+        }.toast(isPresenting: $isShowToast) {
+            AlertToast(
+                displayMode: .banner(.slide),
+                type: .complete(.gray),
+                title: "Favorites updated",
+                subTitle: "Your favorite list has been changed"
+            )
         }
+
     }
 }
 

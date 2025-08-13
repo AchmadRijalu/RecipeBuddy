@@ -11,7 +11,7 @@ import Kingfisher
 struct ListRecipeItem: View {
     @Binding var recipe: RecipeModel
     let favoriteRecipeViewModel: FavoriteRecipeViewModel
-    
+    @Binding var iShowToast: Bool
     var body: some View {
         HStack {
             KFImage(URL(string: recipe.image)).resizable()
@@ -57,11 +57,13 @@ struct ListRecipeItem: View {
             VStack(spacing: 8) {
                 Button(action: {
                     favoriteRecipeViewModel.saveFavorites(recipe: recipe)
+                    iShowToast = true
                 }) {
                     Image(systemName: favoriteRecipeViewModel.isFavorite(recipeId: recipe.id) ? "heart.fill" : "heart")
                         .foregroundColor(favoriteRecipeViewModel.isFavorite(recipeId: recipe.id) ? .red : .gray)
                         .font(.title3)
                 }
+
             }
         }.contentShape(Rectangle()).padding(.bottom, 12)
     }

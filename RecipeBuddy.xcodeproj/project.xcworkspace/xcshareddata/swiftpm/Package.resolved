@@ -1,0 +1,24 @@
+{
+  "originHash" : "1cddb0ce99e2b81f1d6d109fdd414b8cf57bd9ba5d330e000d9b894781562e0a",
+  "pins" : [
+    {
+      "identity" : "alerttoast?tab=readme-ov-file#swift-package-manager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/elai950/AlertToast?tab=readme-ov-file#swift-package-manager",
+      "state" : {
+        "revision" : "b39252eacd159904afd7d718bba0afabb87f2f2f",
+        "version" : "1.3.9"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "2015fda791daa72c8058619545a593bf8c1dd59f",
+        "version" : "8.5.0"
+      }
+    }
+  ],
+  "version" : 3
+}

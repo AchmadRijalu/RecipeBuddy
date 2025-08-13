@@ -1,4 +1,4 @@
-# 🍲 Recipe App
+# 🍲 RecipeBuddy
 
 Data Source: **Bundled Local JSON**
 ---
@@ -45,14 +45,15 @@ This project follows **MVVM (Model–View–ViewModel)** with a **Repository Pat
 
 ### View
 - SwiftUI screens:
-  - `HomeView`
+  - `ListRecipeView`
   - `DetailRecipeView`
-  - `ListRecipeItem`
+  - `FavoriteRecipeView`
 
 ### ViewModel
 - Handles state, search, sorting, and favorites:
   - `ListRecipeViewModel`
   - `FavoriteRecipeViewModel`
+  - `DetailRecipeViewModel`
 
 ### Repository
 - `RecipeRepositoryProtocol` & `RecipeRepository` — loads recipes from local JSON using `async/await`.
@@ -62,7 +63,7 @@ This project follows **MVVM (Model–View–ViewModel)** with a **Repository Pat
 - **Local JSON** — reliable and offline access instead of API.
 - **UserDefaults** — simple persistence; Core Data/SwiftData would be more scalable.
 - **Kingfisher** — fast implementation but adds an external dependency.
-- **MVVM over Redux-style** — less boilerplate, quicker to implement.
+- **MVVM over Redux/VIPER style** — less boilerplate, quicker to implement.
 
 ## ✅ What I Completed
 **Level 1** of the coding test:

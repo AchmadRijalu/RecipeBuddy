@@ -71,10 +71,12 @@ This project follows **MVVM (Model–View–ViewModel)** with a **Repository Pat
 - Display thumbnail, title, tags, and cooking time.
 - Favorites functionality with persistence.
 - Recipe detail view.
+- Search by ingredients.
 
 ---
 
 ## ➕ What I’d Add with More Time
-- Search by ingredients and tags.
-- Sorting by cooking time or popularity.
+**Level 2**
+- Search by tags.
+- Sorting by cooking time.
 

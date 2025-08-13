@@ -32,7 +32,7 @@ This application was built using:
 ## 📋 Requirements
 - Xcode **15+**
 - iOS **17+** (Deployment Target adjustable in project settings)
-- Swift **5.9+**
+- Swift **5+**
 
 ---
 
